@@ -7,7 +7,7 @@
 # Note: Use docker-compose profiles or deploy.sh to start specific servers
 # Example: ./deploy.sh start meraki (only starts enabled servers)
 
-ENABLE_MERAKI_MCP=false                            # Meraki Dashboard API (Port 8000)
+ENABLE_MERAKI_MCP=true                            # Meraki Dashboard API (Port 8000)
 ENABLE_NETBOX_MCP=false                            # NetBox DCIM/IPAM (Port 8001)
 ENABLE_CATC_MCP=false                              # Catalyst Center (Port 8002)
 ENABLE_IOS_XE_MCP=true                            # IOS XE SSH Management (Port 8003)
