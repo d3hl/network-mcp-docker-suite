@@ -251,8 +251,8 @@ build_service_args() {
 }
 
 # Check if docker-compose is available
-if ! command -v docker-compose &> /dev/null; then
-    echo -e "${RED}Error: docker-compose is not installed${NC}"
+if ! command -v docker compose &> /dev/null; then
+    echo -e "${RED}Error: docker compose is not installed${NC}"
     exit 1
 fi
 
@@ -292,9 +292,9 @@ case $COMMAND in
         fi
         
         if [ "$PROFILE" = "all" ]; then
-            docker-compose up -d
+            docker compose up -d
         else
-            docker-compose up -d $SERVICE_ARGS
+            docker compose up -d $SERVICE_ARGS
         fi
         echo -e "${GREEN}✅ Servers started successfully!${NC}"
         echo -e "${YELLOW}Use '$0 status $PROFILE' to check status${NC}"
@@ -307,35 +307,35 @@ case $COMMAND in
     "stop")
         echo -e "${YELLOW}Stopping MCP servers with profile: $PROFILE${NC}"
         if [ "$PROFILE" = "all" ]; then
-            docker-compose down
+            docker compose down
         else
-            docker-compose stop $SERVICE_ARGS
+            docker compose stop $SERVICE_ARGS
         fi
         echo -e "${GREEN}Servers stopped successfully!${NC}"
         ;;
     "restart")
         echo -e "${YELLOW}Restarting MCP servers with profile: $PROFILE${NC}"
-        docker-compose restart $SERVICE_ARGS
+        docker compose restart $SERVICE_ARGS
         echo -e "${GREEN}Servers restarted successfully!${NC}"
         ;;
     "status")
         echo -e "${BLUE}Status for profile: $PROFILE${NC}"
-        docker-compose ps $SERVICE_ARGS
+        docker compose ps $SERVICE_ARGS
         ;;
     "logs")
         echo -e "${BLUE}Logs for profile: $PROFILE${NC}"
         if [ "$PROFILE" = "all" ]; then
-            docker-compose logs -f
+            docker compose logs -f
         else
-            docker-compose logs -f $SERVICE_ARGS
+            docker compose logs -f $SERVICE_ARGS
         fi
         ;;
     "build")
         echo -e "${YELLOW}Building images for profile: $PROFILE${NC}"
         if [ "$PROFILE" = "all" ]; then
-            docker-compose build
+            docker compose build
         else
-            docker-compose build $SERVICE_ARGS
+            docker compose build $SERVICE_ARGS
         fi
         echo -e "${GREEN}Images built successfully!${NC}"
         ;;
