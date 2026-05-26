@@ -48,8 +48,8 @@ CATC_VERIFY_SSL=false                             # SSL certificate verification
 # ========================================
 # IOS XE Device SSH Configuration
 # REQUIRED: Server fails without these credentials
-IOS_XE_USERNAME="op://d3HL/cisco-mcp/username"                             # SSH username for IOS XE devices
-IOS_XE_PASSWORD="op://d3HL/cisco-mcp/password"
+IOS_XE_USERNAME="op://d3HLPRV/cisco-mcp/username"
+IOS_XE_PASSWORD="op://d3HLPRV/cisco-mcp/password"
 
 # Enable Secret (optional - for devices requiring privilege escalation)
 #IOS_XE_ENABLE_SECRET=                             # Enable secret for priv 15 (leave empty if login is priv 15)
